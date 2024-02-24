@@ -1,0 +1,24 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} ECOMM_LOGIN{% endblock %}
+
+{% block body %}
+<h3 class="my-4 mx-4 border-bottom pb-1"><center>Ecomm LOGIN</center></h3>
+<div class="row">
+    <center>
+    <table class="table table-bordered">
+       <form method="POST">
+            {% csrf_token %}
+            {{form.as_table}}
+            <tr>
+                <td colspan="2">
+                   <center><input type="submit" value="Login" class="btn btn-primary" /></center>
+                </td>
+            </tr>
+        </form>
+    </table>
+        </center>
+        <p>If you are not a registered user,Please <a href="{% url 'signup' %}">SignUp</a>.</p>
+</div>
+
+{% endblock %}
